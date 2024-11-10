@@ -6,12 +6,16 @@ import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
-import React, { useState, useEffect } from "react";
+import React, { ReactNode , useState, useEffect } from "react";
 import Navbar from '../components/Navbar';
 import Lottie from "lottie-react";
 import animationData from './avatarAnimation.json';
+type FadeInSectionProps = {
+  children: ReactNode;
+  delay?: number;
+};
 
-const FadeInSection = ({ children, delay = 0 }) => {
+const FadeInSection = ({ children, delay = 0 }: FadeInSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -139,8 +143,7 @@ export default function Page() {
                     <div
                       key={work.company}
                       className="transform transition-all duration-300"
-                      onMouseEnter={() => setIsHovered(work.company)}
-                      onMouseLeave={() => setIsHovered(null)}
+                      
                       style={{
                         transform: isHovered === work.company ? 'translateX(10px)' : 'none'
                       }}

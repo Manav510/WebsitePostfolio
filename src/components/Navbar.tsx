@@ -1,7 +1,9 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-
-export default function Navbar({ setSelectedSection }) {
+type selectedSectionProp = {
+  setSelectedSection: (section: string) => void;
+}; 
+export default function Navbar({ setSelectedSection }: selectedSectionProp) {
   const handleDownload = () => {
     // Create a link element
     const link = document.createElement('a');
