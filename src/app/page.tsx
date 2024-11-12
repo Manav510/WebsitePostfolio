@@ -65,7 +65,7 @@ export default function Page() {
           <FadeInSection delay={300}>
             <div className="flex items-center justify-between">
               <div className="flex-1 space-y-1.5">
-                <h1 className="text-2xl font-bold  bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold  bg-clip-text ">
                   {nameDisplay}
                 </h1>
                 {selectedSection === "about" && (
